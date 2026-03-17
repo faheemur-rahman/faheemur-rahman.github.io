@@ -231,6 +231,110 @@
       border: 1px solid #d7e2ec;
     }
 
+    .paper-media {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.paper-text {
+  min-width: 0;
+}
+
+.paper-preview img {
+  width: 100%;
+  max-width: 260px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: block;
+}
+
+.paper-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.paper-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.paper-links a:hover {
+  text-decoration: underline;
+}
+
+.media-entry {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.media-text {
+  min-width: 0;
+}
+
+.media-preview img {
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: block;
+}
+
+.poster-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.poster-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.poster-links a:hover {
+  text-decoration: underline;
+}
+
+.contact-box a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 840px) {
+  .hero, .grid-2, .paper-media, .media-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    max-width: 300px;
+  }
+
+  .paper-preview img,
+  .media-preview img {
+    max-width: 100%;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 14px;
+  }
+}
+
     .media-entry {
       display: grid;
       grid-template-columns: 1.2fr 0.9fr;
@@ -427,56 +531,82 @@
     </section>
 
     <section id="publications">
-      <h2>Selected Publications, Posters & Talks</h2>
+  <h2>Selected Publications, Posters & Talks</h2>
 
-      <div class="pub-item">
+  <div class="pub-item">
+    <div class="paper-media">
+      <div class="paper-text">
         <div class="item-title">Integrated Security Mechanisms for Weight Protection in Memristive Crossbar Arrays</div>
         <div class="meta">M. F. Rahman and W. Burleson, 2025 IEEE 36th International Conference on Application-specific Systems, Architectures and Processors (ASAP), Vancouver, BC, Canada, 2025, pp. 184-185</div>
         <div>
-          This paper proposes integrated security mechanisms for protecting stored weights in memristive crossbar arrays at the hardware level.
+          This paper presents integrated circuit-level security mechanisms for protecting stored weights in memristive crossbar arrays.
+        </div>
+        <div class="paper-links">
           <a href="https://doi.org/10.1109/ASAP65064.2025.00043" target="_blank" rel="noopener">DOI</a>
+          <a href="Poster_ASAP-2025_MuhammadFaheemurRahman.pdf" target="_blank" rel="noopener">Poster</a>
         </div>
       </div>
 
-      <div class="pub-item">
+      <div class="paper-preview">
+        <a href="Poster_ASAP-2025_MuhammadFaheemurRahman.pdf" target="_blank" rel="noopener">
+          <img src="poster_asap_preview.png" alt="ASAP 2025 poster preview" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="paper-media">
+      <div class="paper-text">
         <div class="item-title">Laser Fault Injection in Memristor-Based Accelerators for AI/ML and Neuromorphic Computing</div>
         <div class="meta">M. Faheemur Rahman et al., AICS 2025 (IBM/IEEE AI Compute Symposium), New York, USA, 2025</div>
         <div>
-          This work studies the impact of laser fault injection on memristor-based accelerators for AI/ML and neuromorphic computing, with emphasis on hardware vulnerability analysis and security implications.
+          This work studies the security impact of laser fault injection on memristor-based accelerators for AI/ML and neuromorphic computing.
+        </div>
+        <div class="paper-links">
           <a href="https://arxiv.org/abs/2510.14120" target="_blank" rel="noopener">Preprint</a>
+          <a href="Poster_IBM-IEEE AI Compute Symposium-2025_MuhammadFaheemurRahman.pdf" target="_blank" rel="noopener">Poster</a>
         </div>
       </div>
 
-      <div class="pub-item">
-        <div class="item-title">Optimization of Next Generation Cellular Networks using Reinforcement Learning</div>
-        <div class="meta">T. Datta, R. Saha, M. Faheemur Rahman, et al., IEEE Region 10 Symposium, Bangladesh, 2020</div>
+      <div class="paper-preview">
+        <a href="Poster_IBM-IEEE AI Compute Symposium-2025_MuhammadFaheemurRahman.pdf" target="_blank" rel="noopener">
+          <img src="poster_ibm_preview.png" alt="IBM AICS 2025 poster preview" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="item-title">Optimization of Next Generation Cellular Networks using Reinforcement Learning</div>
+    <div class="meta">T. Datta, R. Saha, M. Faheemur Rahman, et al., IEEE Region 10 Symposium, Bangladesh, 2020</div>
+    <div>
+      This paper explores reinforcement learning based optimization methods for improving the performance of next generation cellular networks.
+      <a href="https://doi.org/10.1109/TENSYMP50017.2020.9230741" target="_blank" rel="noopener">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="media-entry">
+      <div class="media-text">
+        <div class="item-title">3D/N-tier Stacked Memristive Crossbars for Model Confidentiality in Analog In-Memory Computing</div>
+        <div class="meta">Research Poster, 2026</div>
         <div>
-          This paper explores reinforcement learning based optimization methods for improving the performance of next generation cellular networks.
-          <a href="https://doi.org/10.1109/TENSYMP50017.2020.9230741" target="_blank" rel="noopener">DOI</a>
+          Poster presenting a security-oriented 3D memristive crossbar organization for improving model confidentiality in analog in-memory computing.
+        </div>
+        <div class="poster-links">
+          <a href="poster_3d_crossbar.pdf" target="_blank" rel="noopener">View Poster PDF</a>
         </div>
       </div>
 
-      <div class="pub-item">
-        <div class="media-entry">
-          <div class="media-text">
-            <div class="item-title">3D/N-tier Stacked Memristive Crossbars for Model Confidentiality in Analog In-Memory Computing</div>
-            <div class="meta">Research Poster, 2026</div>
-            <div>
-              Poster presenting a security-oriented 3D memristive crossbar organization for improving model confidentiality in analog in-memory computing.
-            </div>
-            <div class="poster-links">
-              <a href="poster_3d_crossbar.pdf" target="_blank" rel="noopener">View Poster PDF</a>
-            </div>
-          </div>
-
-          <div class="media-preview">
-            <a href="poster_3d_crossbar.pdf" target="_blank" rel="noopener">
-              <img src="poster_3d_crossbar.png" alt="Poster preview for 3D stacked memristive crossbars" />
-            </a>
-          </div>
-        </div>
+      <div class="media-preview">
+        <a href="poster_3d_crossbar.pdf" target="_blank" rel="noopener">
+          <img src="poster_3d_crossbar.png" alt="Poster preview for 3D stacked memristive crossbars" />
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section id="resume">
       <h2>Resume</h2>
