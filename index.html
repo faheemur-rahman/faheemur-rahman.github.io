@@ -78,16 +78,23 @@
     .photo {
       width: 100%;
       aspect-ratio: 1 / 1.15;
-      background: linear-gradient(135deg, #e8ecef, #d7dee6);
       border: 1px solid var(--line);
       border-radius: 6px;
+      overflow: hidden;
+      background: #e8ecef;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--muted);
       font-size: 0.98rem;
       text-align: center;
-      padding: 20px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .hero h1 {
@@ -224,12 +231,56 @@
       border: 1px solid #d7e2ec;
     }
 
+    .media-entry {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .media-text {
+      min-width: 0;
+    }
+
+    .media-preview img {
+      width: 100%;
+      max-width: 380px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      display: block;
+    }
+
+    .poster-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .poster-links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .poster-links a:hover {
+      text-decoration: underline;
+    }
+
     .contact-box {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 6px;
       padding: 22px;
       max-width: 720px;
+    }
+
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -239,12 +290,16 @@
     }
 
     @media (max-width: 840px) {
-      .hero, .grid-2 {
+      .hero, .grid-2, .media-entry {
         grid-template-columns: 1fr;
       }
 
       .photo {
         max-width: 300px;
+      }
+
+      .media-preview img {
+        max-width: 100%;
       }
 
       .nav {
@@ -268,7 +323,7 @@
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
-        <a href="#cv">CV</a>
+        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -276,7 +331,9 @@
 
   <main class="container">
     <section class="hero" id="about" style="border-top:none;">
-      <div class="photo">Your professional photo here</div>
+      <div class="photo">
+        <img src="profile.jpg" alt="Muhammad Faheemur Rahman" />
+      </div>
       <div>
         <h1>Muhammad Faheemur Rahman</h1>
         <div class="subtitle">PhD Student, Electrical and Computer Engineering</div>
@@ -294,7 +351,7 @@
         <div class="links">
           <a class="btn primary" href="#research">View Research</a>
           <a class="btn" href="#publications">Selected Publications</a>
-          <a class="btn" href="#cv">Download CV</a>
+          <a class="btn" href="Resume_Muhammad_Faheemur_Rahman.pdf" target="_blank" rel="noopener">Download Resume</a>
           <a class="btn" href="#contact">Contact</a>
         </div>
       </div>
@@ -328,6 +385,7 @@
 
     <section id="projects">
       <h2>Selected Projects</h2>
+
       <div class="project-item">
         <div class="item-title">3D-Stacked Memristive Crossbar Arrays for Improved Model Confidentiality</div>
         <div class="meta">PhD Research Project</div>
@@ -340,6 +398,7 @@
           <span class="tag">Hardware Security</span>
         </div>
       </div>
+
       <div class="project-item">
         <div class="item-title">HSPICE Automation for Large Memristive Arrays</div>
         <div class="meta">Python + HSPICE</div>
@@ -352,6 +411,7 @@
           <span class="tag">Automation</span>
         </div>
       </div>
+
       <div class="project-item">
         <div class="item-title">Laser Fault Injection Analysis in Memristive Hardware</div>
         <div class="meta">Security-Oriented Circuit Study</div>
@@ -367,35 +427,68 @@
     </section>
 
     <section id="publications">
-      <h2>Selected Publications & Talks</h2>
+      <h2>Selected Publications, Posters & Talks</h2>
+
       <div class="pub-item">
-        <div class="item-title">Paper Title Placeholder</div>
-        <div class="meta">Conference / Journal Name, Year</div>
-        <div>One-line summary of the contribution. Add PDF, DOI, or presentation links later.</div>
+        <div class="item-title">Integrated Security Mechanisms for Weight Protection in Memristive Crossbar Arrays</div>
+        <div class="meta">M. F. Rahman and W. Burleson, 2025 IEEE 36th International Conference on Application-specific Systems, Architectures and Processors (ASAP), Vancouver, BC, Canada, 2025, pp. 184-185</div>
+        <div>
+          This paper proposes integrated security mechanisms for protecting stored weights in memristive crossbar arrays at the hardware level.
+          <a href="https://doi.org/10.1109/ASAP65064.2025.00043" target="_blank" rel="noopener">DOI</a>
+        </div>
       </div>
+
       <div class="pub-item">
-        <div class="item-title">Poster / Presentation Title Placeholder</div>
-        <div class="meta">Event Name, Year</div>
-        <div>Short description of the talk, poster, or research presentation.</div>
+        <div class="item-title">Laser Fault Injection in Memristor-Based Accelerators for AI/ML and Neuromorphic Computing</div>
+        <div class="meta">M. Faheemur Rahman et al., AICS 2025 (IBM/IEEE AI Compute Symposium), New York, USA, 2025</div>
+        <div>
+          This work studies the impact of laser fault injection on memristor-based accelerators for AI/ML and neuromorphic computing, with emphasis on hardware vulnerability analysis and security implications.
+          <a href="https://arxiv.org/abs/2510.14120" target="_blank" rel="noopener">Preprint</a>
+        </div>
       </div>
+
       <div class="pub-item">
-        <div class="item-title">Another Publication Placeholder</div>
-        <div class="meta">Venue, Year</div>
-        <div>Brief description of what this work studied and why it matters.</div>
+        <div class="item-title">Optimization of Next Generation Cellular Networks using Reinforcement Learning</div>
+        <div class="meta">T. Datta, R. Saha, M. Faheemur Rahman, et al., IEEE Region 10 Symposium, Bangladesh, 2020</div>
+        <div>
+          This paper explores reinforcement learning based optimization methods for improving the performance of next generation cellular networks.
+          <a href="https://doi.org/10.1109/TENSYMP50017.2020.9230741" target="_blank" rel="noopener">DOI</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="media-entry">
+          <div class="media-text">
+            <div class="item-title">3D/N-tier Stacked Memristive Crossbars for Model Confidentiality in Analog In-Memory Computing</div>
+            <div class="meta">Research Poster, 2026</div>
+            <div>
+              Poster presenting a security-oriented 3D memristive crossbar organization for improving model confidentiality in analog in-memory computing.
+            </div>
+            <div class="poster-links">
+              <a href="poster_3d_crossbar.pdf" target="_blank" rel="noopener">View Poster PDF</a>
+            </div>
+          </div>
+
+          <div class="media-preview">
+            <a href="poster_3d_crossbar.pdf" target="_blank" rel="noopener">
+              <img src="poster_3d_crossbar.png" alt="Poster preview for 3D stacked memristive crossbars" />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="cv">
-      <h2>CV</h2>
+    <section id="resume">
+      <h2>Resume</h2>
       <p class="section-intro">
-        You can place a direct PDF link here later. For now, this section can briefly summarize education, experience, and key technical areas.
+        <a href="Resume_Muhammad_Faheemur_Rahman.pdf" target="_blank" rel="noopener">View Resume PDF</a>
       </p>
       <div class="grid-2">
         <div class="card">
           <h3>Education</h3>
           <ul class="clean">
-            <li>PhD in Electrical and Computer Engineering, UMass Amherst</li>
-            <li>Bachelor’s in Electrical & Electronic Engineering, minor in Computer Science</li>
+            <li>PhD in Electrical & Computer Engineering, UMass Amherst</li>
+            <li>BSc in Electrical & Electronic Engineering (with minor in Computer Science), Brac University</li>
           </ul>
         </div>
         <div class="card">
@@ -414,10 +507,10 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="contact-box">
-        <p><strong>Email:</strong> your-email@umass.edu</p>
+        <p><strong>Email:</strong> <a href="mailto:faheemur@umass.edu">faheemur@umass.edu</a></p>
         <p><strong>Google Scholar:</strong> Add your profile link here</p>
-        <p><strong>LinkedIn:</strong> Add your profile link here</p>
-        <p><strong>GitHub:</strong> Add your GitHub profile link here</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muhammad-faheemur-rahman" target="_blank" rel="noopener">www.linkedin.com/in/muhammad-faheemur-rahman</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/faheemur-rahman" target="_blank" rel="noopener">github.com/faheemur-rahman</a></p>
         <p><strong>Location:</strong> Amherst, Massachusetts, USA</p>
       </div>
     </section>
